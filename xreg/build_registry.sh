@@ -65,11 +65,21 @@ docker exec "${CONTAINER_ID}" /bin/sh -c '
  done
 '
 
+# Construct the GitHub Pages URL for this repo (if running on GH Actions)
+if [ -n "$GITHUB_ACTIONS" ]; then
+  REPO_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F/ '{print $2}')
+  GITHUB_PAGES_URL="https://${REPO_NAME}.github.io/${REPO_NAME}/"
+  echo "GitHub Pages URL: $GITHUB_PAGES_URL"
+else
+  REPO_NAME=$(basename "$REPO_ROOT")
+  GITHUB_PAGES_URL="https://${REPO_NAME}.github.io/"
+fi
+
 # Export the live data as a tarball
 echo "Exporting live data to $ARCHIVE_PATH..."
 docker exec "${CONTAINER_ID}" /bin/sh -c "
   mkdir -p /tmp/live
-  /xr download -s localhost:8080 /tmp/live -u https://mcpxreg.org/
+  /xr download -s localhost:8080 /tmp/live -u $GITHUB_PAGES_URL
   cd /tmp/live
   tar czf $ARCHIVE_PATH .
 "
