@@ -7,6 +7,10 @@ on:
      workflows: ["Build static site to gh-pages branch"]
      types:
        - completed
+  push:
+    branches:
+      - gh-pages
+    
 
 permissions:
   contents: write

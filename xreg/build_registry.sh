@@ -160,4 +160,8 @@ git push origin gh-pages
 cd "$REPO_ROOT"
 git checkout "$CURRENT_BRANCH"
 
+# now we push the changes to the gh-pages branch
+echo "Pushing changes to gh-pages branch..."
+git push origin gh-pages:gh-pages --force
+
 echo "Process complete."
