@@ -28,9 +28,9 @@ fi
 # Start or reuse the xregistry server container
 if [ "$(docker ps -q -f name="${CONTAINER_NAME}")" ]; then
   echo "Container ${CONTAINER_NAME} is already running."
-  CONTAINER_ID=$(docker ps -q -f name="${CONTAINER_NAME}")
+  exit
 else
-  CONTAINER_ID=$(docker run -d --name "${CONTAINER_NAME}" -v "$REPO_ROOT":/workspace -p 8080:8080 ghcr.io/xregistry/xrserver-all --recreatedb)
+  CONTAINER_ID=$(docker run -d --name "${CONTAINER_NAME}" -v $REPO_ROOT:/workspace -p 8080:8080 ghcr.io/xregistry/xrserver-all --recreatedb)
 fi
 
 # Wait for the server to be ready
