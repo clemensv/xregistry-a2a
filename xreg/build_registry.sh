@@ -7,6 +7,10 @@ ARCHIVE_PATH="/tmp/xr_live_data.tar.gz"
 # Determine repository root directory
 SCRIPT_DIR=$(dirname "$(readlink -f "$PWD$0")")
 REPO_ROOT=$(readlink -f "$SCRIPT_DIR/..")
+if [ -n "$GITHUB_ACTIONS" ]; then
+  REPO_ROOT="$GITHUB_WORKSPACE"
+  echo "Running on GitHub Actions. Using GITHUB_WORKSPACE as repository root: $REPO_ROOT"
+fi
 DATA_EXPORT_DIR="$REPO_ROOT/site/public/registry"
 SITE_DIR="$REPO_ROOT/site"
 
