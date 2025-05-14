@@ -1,0 +1,77 @@
+{
+    "groups": {
+        "agentcardproviders": {
+            "plural": "agentcardproviders",
+            "singular": "agentcardprovider",
+            "modelversion": "1.0-rc1",
+            "description": "Google A2A AgentCardProviders group",
+            "resources": {
+                "agentcards": {
+                    "plural": "agentcards",
+                    "singular": "agentcard",
+                    "description": "Google A2A AgentCard resource",
+                    "maxversions": 0,
+                    "hasdocument": true,
+                    "attributes": {
+                        "specversion": {
+                            "name": "specversion",
+                            "type": "string",
+                            "required": false
+                        },
+                        "*": {
+                            "name": "*",
+                            "type": "any"
+                        }
+                    },
+                    "metaattributes": {
+                        "validation": {
+                            "name": "validation",
+                            "type": "boolean",
+                            "description": "Verify compliance with specified schema 'specversion'",
+                            "required": true,
+                            "default": false
+                        }
+                    }
+                }
+            }
+        },
+        "schemagroups": {
+            "singular": "schemagroup",
+            "modelversion": "1.0-rc1",
+            "compatiblewith": "https://xregistry.io/xreg/domains/schema/specs/model.json",
+            "attributes": {
+                "*": {
+                    "name": "*",
+                    "type": "any"
+                }
+            },
+            "resources": {
+                "schemas": {
+                    "singular": "schema",
+                    "modelversion": "1.0-rc1",
+                    "compatiblewith": "https://xregistry.io/xreg/domains/schema/specs/model.json",
+                    "attributes": {
+                        "format": {
+                            "name": "format",
+                            "type": "string",
+                            "description": "Schema format identifier for this schema version"
+                        },
+                        "*": {
+                            "name": "*",
+                            "type": "any"
+                        }
+                    },
+                    "metaattributes": {
+                        "validation": {
+                            "name": "validation",
+                            "type": "boolean",
+                            "description": "Verify compliance with specified schema 'format'",
+                            "required": true,
+                            "default": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
