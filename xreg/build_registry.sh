@@ -67,12 +67,14 @@ docker exec "${CONTAINER_ID}" /bin/sh -c '
 
 # Construct the GitHub Pages URL for this repo (if running on GH Actions)
 if [ -n "$GITHUB_ACTIONS" ]; then
+  REPO_ORG=$(echo "$GITHUB_REPOSITORY" | awk -F/ '{print $1}')
   REPO_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F/ '{print $2}')
-  GITHUB_PAGES_URL="https://${REPO_NAME}.github.io/${REPO_NAME}/"
+  GITHUB_PAGES_URL="https://${REPO_ORG}.github.io/${REPO_NAME}/"
   echo "GitHub Pages URL: $GITHUB_PAGES_URL"
 else
   REPO_NAME=$(basename "$REPO_ROOT")
-  GITHUB_PAGES_URL="https://${REPO_NAME}.github.io/"
+  # Replace 'your-org' with your actual organization name if not running on GitHub Actions
+  GITHUB_PAGES_URL="https://clemensv.github.io/xregistry-asa/"
 fi
 
 # Export the live data as a tarball
@@ -113,7 +115,7 @@ BUILD_OUTPUT="dist/xregistry-viewer"
 cd "$SITE_DIR"
 if [ -f "package.json" ]; then
   npm install 
-  npm run build-prod
+  npm run build-prod -- --base-href="$GITHUB_PAGES_URL"
 fi
 
 # Stage the build output into the 'gh-pages' branch
