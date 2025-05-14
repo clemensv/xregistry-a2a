@@ -137,7 +137,7 @@ fi
 
 # Clean the branch and copy in the build output from the main repo
 find "$TMP_DIR" -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
-cp -r $DATA_EXPORT_DIR/$BUILD_OUTPUT/* .
+cp -r $DATA_EXPORT_DIR/$BUILD_OUTPUT/* "$TMP_DIR"
 
 touch .nojekyll
 
