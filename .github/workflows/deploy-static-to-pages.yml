@@ -27,8 +27,6 @@ jobs:
       - name: Checkout xRegistry static site
         uses: actions/checkout@v3
         with:
-          submodules: true
-          lfs: false
           ref: gh-pages
 
       - name: Setup Pages
@@ -37,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '/'
+          path: $GITHUB_WORKSPACE
 
       - name: Deploy to GitHub Pages
         id: deployment
