@@ -20,6 +20,17 @@ echo "Data export directory: $DATA_EXPORT_DIR"
 echo "Container name: $CONTAINER_NAME"
 echo "Archive path: $ARCHIVE_PATH"
 
+# Construct the GitHub Pages URL for this repo (if running on GH Actions)
+if [ -n "$GITHUB_ACTIONS" ]; then
+  REPO_ORG=$(echo "$GITHUB_REPOSITORY" | awk -F/ '{print $1}')
+  REPO_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F/ '{print $2}')
+  GITHUB_PAGES_URL="https://${REPO_ORG}.github.io/${REPO_NAME}/"
+  echo "GitHub Pages URL: $GITHUB_PAGES_URL"
+else
+  REPO_NAME=$(basename "$REPO_ROOT")
+  # Replace 'your-org' with your actual organization name if not running on GitHub Actions
+  GITHUB_PAGES_URL="https://clemensv.github.io/xregistry-asa/"
+fi
 
 # check out https://github.com/clemensv/xregistry-viewer into $SITE_DIR
 if [ ! -d "$SITE_DIR" ]; then
@@ -28,6 +39,21 @@ else
   cd "$SITE_DIR"
   git pull
   cd "$REPO_ROOT"
+fi
+
+# edit $SITE_DIR/src/environments/environment.prod.ts
+# export const environment = {
+#  production: true,
+#  apiBaseUrl: 'https://mcpxreg.org/registry'
+#};
+
+# Replace the URL in environment.prod.ts
+ENV_FILE="$SITE_DIR/src/environments/environment.prod.ts"
+if [ -f "$ENV_FILE" ]; then
+  sed -i "s|https://mcpxreg.org/registry|$GITHUB_PAGES_URL/registry|g" "$ENV_FILE"
+  echo "Updated $ENV_FILE with GitHub Pages URL: $GITHUB_PAGES_URL"
+else
+  echo "Environment file not found: $ENV_FILE"
 fi
 
 # Start or reuse the xregistry server container
@@ -65,17 +91,7 @@ docker exec "${CONTAINER_ID}" /bin/sh -c '
  done
 '
 
-# Construct the GitHub Pages URL for this repo (if running on GH Actions)
-if [ -n "$GITHUB_ACTIONS" ]; then
-  REPO_ORG=$(echo "$GITHUB_REPOSITORY" | awk -F/ '{print $1}')
-  REPO_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F/ '{print $2}')
-  GITHUB_PAGES_URL="https://${REPO_ORG}.github.io/${REPO_NAME}/"
-  echo "GitHub Pages URL: $GITHUB_PAGES_URL"
-else
-  REPO_NAME=$(basename "$REPO_ROOT")
-  # Replace 'your-org' with your actual organization name if not running on GitHub Actions
-  GITHUB_PAGES_URL="https://clemensv.github.io/xregistry-asa/"
-fi
+
 
 # Export the live data as a tarball
 echo "Exporting live data to $ARCHIVE_PATH..."
