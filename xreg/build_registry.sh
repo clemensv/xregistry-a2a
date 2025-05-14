@@ -93,15 +93,18 @@ cp "$REPO_ROOT/xreg/registry-staticwebapp.config.json" "$DATA_EXPORT_DIR/staticw
 
 # Build the Angular app
 echo "Building the Angular app..."
-cd "$DATA_EXPORT_DIR"
+BUILD_OUTPUT="dist/xregistry-viewer"
+cd "$SITE_DIR"
 if [ -f "package.json" ]; then
-  npm install --silent
-  npm run build -- --config production --output-path dist/xregistry-viewer
+  npm install 
+  npm run build -- --config production --output-path $BUILD_OUTPUT
 fi
 
 # Stage the build output into the 'gh-pages' branch
 echo "Staging build output into 'gh-pages' branch..."
-BUILD_OUTPUT="dist/xregistry-viewer"
+
+
+
 
 # Save the current branch name (default to main if not found)
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "master")
@@ -122,8 +125,8 @@ else
 fi
 
 # Clean the branch and copy in the build output from the main repo
-rm -rf $TMP_DIR/* $TMP_DIR/.[!.]* || true
-cp -r $REPO_ROOT/$BUILD_OUTPUT/* .
+find "$TMP_DIR" -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+cp -r $DATA_EXPORT_DIR/$BUILD_OUTPUT/* .
 
 touch .nojekyll
 
@@ -134,7 +137,8 @@ echo "Build output staged in gh-pages branch in temporary dir: $TMP_DIR"
 echo "Please push the 'gh-pages' branch from this directory to deploy on GitHub Pages."
 
 # Switch back to the original branch
+git push origin gh-pages
+cd "$REPO_ROOT"
 git checkout "$CURRENT_BRANCH"
-
 
 echo "Process complete."
