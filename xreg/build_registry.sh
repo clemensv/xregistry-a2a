@@ -5,7 +5,7 @@ CONTAINER_NAME="xregistry-server"
 ARCHIVE_PATH="/tmp/xr_live_data.tar.gz"
 
 # Determine repository root directory
-SCRIPT_DIR=$(dirname "$(readlink -f "$PWD$0")")
+SCRIPT_DIR=$(dirname "$(readlink -f "$PWD/$0")")
 REPO_ROOT=$(readlink -f "$SCRIPT_DIR/..")
 if [ -n "$GITHUB_ACTIONS" ]; then
   REPO_ROOT="$GITHUB_WORKSPACE"
@@ -14,6 +14,7 @@ fi
 DATA_EXPORT_DIR="$REPO_ROOT/site/public/registry"
 SITE_DIR="$REPO_ROOT/site"
 
+echo "Script directory: $SCRIPT_DIR"
 echo "Repository root directory: $REPO_ROOT"
 echo "Data export directory: $DATA_EXPORT_DIR"
 echo "Container name: $CONTAINER_NAME"
@@ -102,14 +103,11 @@ BUILD_OUTPUT="dist/xregistry-viewer"
 cd "$SITE_DIR"
 if [ -f "package.json" ]; then
   npm install 
-  npm run build -- --config production --output-path $BUILD_OUTPUT
+  npm run build-prod
 fi
 
 # Stage the build output into the 'gh-pages' branch
 echo "Staging build output into 'gh-pages' branch..."
-
-
-
 
 # Save the current branch name (default to main if not found)
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "master")
@@ -137,7 +135,7 @@ fi
 
 # Clean the branch and copy in the build output from the main repo
 find "$TMP_DIR" -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
-cp -r $DATA_EXPORT_DIR/$BUILD_OUTPUT/* "$TMP_DIR"
+cp -r $SITE_DIR/$BUILD_OUTPUT/* "$TMP_DIR"
 
 touch .nojekyll
 
