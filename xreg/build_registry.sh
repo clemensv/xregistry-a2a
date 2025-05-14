@@ -111,7 +111,13 @@ CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "master")
 
 TMP_DIR=$(mktemp -d)
 echo "Cloning repository into temporary directory: $TMP_DIR"
-git clone "$REPO_ROOT" "$TMP_DIR" -b gh-pages > /dev/null
+branch="gh-pages"
+if git ls-remote --exit-code --heads "$REPO_ROOT" "$branch" &> /dev/null; then
+    git clone "$REPO_ROOT" "$TMP_DIR" -b "$branch" > /dev/null
+else
+    echo "Branch $branch does not exist. Cloning default branch instead."
+    git clone "$REPO_ROOT" "$TMP_DIR" > /dev/null
+fi
 
 cd "$TMP_DIR"
 
