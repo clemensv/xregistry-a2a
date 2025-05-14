@@ -88,8 +88,8 @@ python "$REPO_ROOT/index/build_index.py"
 
 # Copy additional files
 echo "Copying flex.json files to $REPO_ROOT/site/public/registry/..."
-cp "$REPO_ROOT/index/flex/"*.flex.json "$DATA_EXPORT_DIR"
-cp "$REPO_ROOT/xreg/registry-staticwebapp.config.json" "$DATA_EXPORT_DIR/staticwebapp.config.json"
+cp $REPO_ROOT/index/flex/*.flex.json $DATA_EXPORT_DIR
+cp $REPO_ROOT/xreg/registry-staticwebapp.config.json $DATA_EXPORT_DIR/staticwebapp.config.json
 
 # Build the Angular app
 echo "Building the Angular app..."
@@ -111,7 +111,7 @@ CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "master")
 
 TMP_DIR=$(mktemp -d)
 echo "Cloning repository into temporary directory: $TMP_DIR"
-git clone "$REPO_ROOT" "$TMP_DIR" > /dev/null
+git clone "$REPO_ROOT" "$TMP_DIR" -b gh-pages > /dev/null
 
 cd "$TMP_DIR"
 
