@@ -41,6 +41,7 @@ done
 
 # Update the model
 echo "Updating model..."
+docker exec "${CONTAINER_ID}" /bin/bash ls -l /workspace
 docker exec "${CONTAINER_ID}" /xr model update /workspace/xreg/model.json -s localhost:8080
 
 # Create entries for each registry index.json
