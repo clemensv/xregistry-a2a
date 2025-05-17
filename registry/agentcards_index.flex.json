@@ -1,0 +1,12 @@
+{
+  "reg": "{\"contoso.com/reimbursement\":1}",
+  "name.cfg": "{\"doc\":0,\"opt\":1}",
+  "name.map": "[{\"reimbursement\":[\"contoso.com/reimbursement\"]},{\"agent\":[\"contoso.com/reimbursement\"]},{},{},{},{},{},{},{}]",
+  "name.ctx": "[{}]",
+  "description.cfg": "{\"doc\":0,\"opt\":1}",
+  "description.map": "[{\"reimbursement\":[\"contoso.com/reimbursement\"]},{\"agent\":[\"contoso.com/reimbursement\"]},{\"handles\":[\"contoso.com/reimbursement\"]},{\"employee\":[\"contoso.com/reimbursement\"]},{\"expense\":[\"contoso.com/reimbursement\"]},{},{\"processing\":[\"contoso.com/reimbursement\"]},{},{}]",
+  "description.ctx": "[{}]",
+  "uritemplate.cfg": "{\"doc\":0,\"opt\":1}",
+  "uritemplate.map": "[{},{},{},{},{},{},{},{},{}]",
+  "uritemplate.ctx": "[{}]"
+}
