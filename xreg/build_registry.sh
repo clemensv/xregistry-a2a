@@ -42,9 +42,9 @@ else
 fi
 
 # Update baseUrl in all JSON files in $SITE_DIR/public/config to $GITHUB_PAGES_URL/registry
-CONFIG_DIR="$SITE_DIR/public/config"
+CONFIG_DIR="$SITE_DIR/public"
 if [ -d "$CONFIG_DIR" ]; then
-  for file in "$CONFIG_DIR"/*.json; do
+  for file in "$CONFIG_DIR"/config.json; do
     if [ -f "$file" ]; then
       tmpfile=$(mktemp)
       jq --arg url "${GITHUB_PAGES_URL}" '.baseUrl = $url' "$file" > "$tmpfile" && mv "$tmpfile" "$file"
