@@ -41,11 +41,19 @@ else
   cd "$REPO_ROOT"
 fi
 
-# edit $SITE_DIR/src/environments/environment.prod.ts
-# export const environment = {
-#  production: true,
-#  apiBaseUrl: 'https://mcpxreg.org/registry'
-#};
+# Update baseUrl in all JSON files in $SITE_DIR/public/config to $GITHUB_PAGES_URL/registry
+CONFIG_DIR="$SITE_DIR/public/config"
+if [ -d "$CONFIG_DIR" ]; then
+  for file in "$CONFIG_DIR"/*.json; do
+    if [ -f "$file" ]; then
+      tmpfile=$(mktemp)
+      jq --arg url "${GITHUB_PAGES_URL}" '.baseUrl = $url' "$file" > "$tmpfile" && mv "$tmpfile" "$file"
+      echo "Updated baseUrl in $file to ${GITHUB_PAGES_URL}"
+    fi
+  done
+else
+  echo "Config directory not found: $CONFIG_DIR"
+fi
 
 # Replace the URL in environment.prod.ts
 ENV_FILE="$SITE_DIR/src/environments/environment.prod.ts"
