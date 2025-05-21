@@ -41,7 +41,6 @@ else
   cd "$REPO_ROOT"
 fi
 
-# Update baseUrl in all JSON files in $SITE_DIR/public/config to $GITHUB_PAGES_URL/registry
 CONFIG_DIR="$SITE_DIR/public"
 if [ -d "$CONFIG_DIR" ]; then
   for file in "$CONFIG_DIR"/config.json; do
@@ -53,6 +52,15 @@ if [ -d "$CONFIG_DIR" ]; then
   done
 else
   echo "Config directory not found: $CONFIG_DIR"
+fi
+
+# update the base URL in the Angular app's index.html
+INDEX_FILE="$SITE_DIR/src/index.html"
+if [ -f "$INDEX_FILE" ]; then
+  sed -i "s|<base href=\"/\">|<base href=\"$GITHUB_PAGES_URL\">|g" "$INDEX_FILE"
+  echo "Updated base URL in $INDEX_FILE to $GITHUB_PAGES_URL"
+else
+  echo "Index file not found: $INDEX_FILE"
 fi
 
 # Replace the URL in environment.prod.ts
