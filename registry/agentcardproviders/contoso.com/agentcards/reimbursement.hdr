@@ -1,0 +1,16 @@
+content-disposition:reimbursement
+content-length:1419
+content-location:https://clemensv.github.io/xregistry-a2a//registry/agentcardproviders/contoso.com/agentcards/reimbursement/versions/1
+content-type:text/plain; charset=utf-8
+xregistry-agentcardid:reimbursement
+xregistry-ancestor:1
+xregistry-createdat:2025-05-21T12:03:49.809697574Z
+xregistry-epoch:1
+xregistry-isdefault:true
+xregistry-metaurl:https://clemensv.github.io/xregistry-a2a//registry/agentcardproviders/contoso.com/agentcards/reimbursement/meta
+xregistry-modifiedat:2025-05-21T12:03:49.809697574Z
+xregistry-self:https://clemensv.github.io/xregistry-a2a//registry/agentcardproviders/contoso.com/agentcards/reimbursement
+xregistry-versionid:1
+xregistry-versionscount:1
+xregistry-versionsurl:https://clemensv.github.io/xregistry-a2a//registry/agentcardproviders/contoso.com/agentcards/reimbursement/versions
+xregistry-xid:/agentcardproviders/contoso.com/agentcards/reimbursement

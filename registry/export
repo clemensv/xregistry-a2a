@@ -1,0 +1,2795 @@
+{
+  "specversion": "1.0-rc1",
+  "registryid": "xRegistry",
+  "self": "#/",
+  "xid": "/",
+  "epoch": 9,
+  "createdat": "2025-05-21T12:03:47.818169949Z",
+  "modifiedat": "2025-05-21T12:03:50.348622203Z",
+
+  "capabilities": {
+    "apis": [
+      "/capabilities",
+      "/export",
+      "/model"
+    ],
+    "flags": [
+      "collections",
+      "doc",
+      "epoch",
+      "filter",
+      "inline",
+      "nodefaultversionid",
+      "nodefaultversionsticky",
+      "noepoch",
+      "noreadonly",
+      "offered",
+      "schema",
+      "setdefaultversionid",
+      "specversion"
+    ],
+    "mutable": [
+      "capabilities",
+      "entities",
+      "model"
+    ],
+    "pagination": false,
+    "schemas": [
+      "xregistry-json/1.0-rc1"
+    ],
+    "shortself": false,
+    "specversions": [
+      "1.0-rc1"
+    ],
+    "sticky": true
+  },
+  "model": {
+    "attributes": {
+      "specversion": {
+        "name": "specversion",
+        "type": "string",
+        "readonly": true,
+        "required": true
+      },
+      "registryid": {
+        "name": "registryid",
+        "type": "string",
+        "readonly": true,
+        "immutable": true,
+        "required": true
+      },
+      "self": {
+        "name": "self",
+        "type": "url",
+        "readonly": true,
+        "immutable": true,
+        "required": true
+      },
+      "xid": {
+        "name": "xid",
+        "type": "xid",
+        "readonly": true,
+        "immutable": true,
+        "required": true
+      },
+      "epoch": {
+        "name": "epoch",
+        "type": "uinteger",
+        "readonly": true,
+        "required": true
+      },
+      "name": {
+        "name": "name",
+        "type": "string"
+      },
+      "description": {
+        "name": "description",
+        "type": "string"
+      },
+      "documentation": {
+        "name": "documentation",
+        "type": "url"
+      },
+      "labels": {
+        "name": "labels",
+        "type": "map",
+        "item": {
+          "type": "string"
+        }
+      },
+      "createdat": {
+        "name": "createdat",
+        "type": "timestamp",
+        "required": true
+      },
+      "modifiedat": {
+        "name": "modifiedat",
+        "type": "timestamp",
+        "required": true
+      },
+      "capabilities": {
+        "name": "capabilities",
+        "type": "object",
+        "attributes": {
+          "*": {
+            "name": "*",
+            "type": "any"
+          }
+        }
+      },
+      "model": {
+        "name": "model",
+        "type": "object",
+        "attributes": {
+          "*": {
+            "name": "*",
+            "type": "any"
+          }
+        }
+      },
+      "agentcardprovidersurl": {
+        "name": "agentcardprovidersurl",
+        "type": "url",
+        "readonly": true,
+        "immutable": true,
+        "required": true
+      },
+      "agentcardproviderscount": {
+        "name": "agentcardproviderscount",
+        "type": "uinteger",
+        "readonly": true,
+        "required": true
+      },
+      "agentcardproviders": {
+        "name": "agentcardproviders",
+        "type": "map",
+        "item": {
+          "type": "object",
+          "attributes": {
+            "*": {
+              "name": "*",
+              "type": "any"
+            }
+          }
+        }
+      },
+      "mcpprovidersurl": {
+        "name": "mcpprovidersurl",
+        "type": "url",
+        "readonly": true,
+        "immutable": true,
+        "required": true
+      },
+      "mcpproviderscount": {
+        "name": "mcpproviderscount",
+        "type": "uinteger",
+        "readonly": true,
+        "required": true
+      },
+      "mcpproviders": {
+        "name": "mcpproviders",
+        "type": "map",
+        "item": {
+          "type": "object",
+          "attributes": {
+            "*": {
+              "name": "*",
+              "type": "any"
+            }
+          }
+        }
+      },
+      "schemagroupsurl": {
+        "name": "schemagroupsurl",
+        "type": "url",
+        "readonly": true,
+        "immutable": true,
+        "required": true
+      },
+      "schemagroupscount": {
+        "name": "schemagroupscount",
+        "type": "uinteger",
+        "readonly": true,
+        "required": true
+      },
+      "schemagroups": {
+        "name": "schemagroups",
+        "type": "map",
+        "item": {
+          "type": "object",
+          "attributes": {
+            "*": {
+              "name": "*",
+              "type": "any"
+            }
+          }
+        }
+      }
+    },
+    "groups": {
+      "agentcardproviders": {
+        "plural": "agentcardproviders",
+        "singular": "agentcardprovider",
+        "description": "Google A2A AgentCardProviders group",
+        "modelversion": "1.0-rc1",
+        "attributes": {
+          "agentcardproviderid": {
+            "name": "agentcardproviderid",
+            "type": "string",
+            "immutable": true,
+            "required": true
+          },
+          "self": {
+            "name": "self",
+            "type": "url",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "xid": {
+            "name": "xid",
+            "type": "xid",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "epoch": {
+            "name": "epoch",
+            "type": "uinteger",
+            "readonly": true,
+            "required": true
+          },
+          "name": {
+            "name": "name",
+            "type": "string"
+          },
+          "description": {
+            "name": "description",
+            "type": "string"
+          },
+          "documentation": {
+            "name": "documentation",
+            "type": "url"
+          },
+          "labels": {
+            "name": "labels",
+            "type": "map",
+            "item": {
+              "type": "string"
+            }
+          },
+          "createdat": {
+            "name": "createdat",
+            "type": "timestamp",
+            "required": true
+          },
+          "modifiedat": {
+            "name": "modifiedat",
+            "type": "timestamp",
+            "required": true
+          },
+          "agentcardsurl": {
+            "name": "agentcardsurl",
+            "type": "url",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "agentcardscount": {
+            "name": "agentcardscount",
+            "type": "uinteger",
+            "readonly": true,
+            "required": true
+          },
+          "agentcards": {
+            "name": "agentcards",
+            "type": "map",
+            "item": {
+              "type": "object",
+              "attributes": {
+                "*": {
+                  "name": "*",
+                  "type": "any"
+                }
+              }
+            }
+          }
+        },
+        "resources": {
+          "agentcards": {
+            "plural": "agentcards",
+            "singular": "agentcard",
+            "description": "Google A2A AgentCard resource",
+            "maxversions": 0,
+            "setversionid": true,
+            "setdefaultversionsticky": true,
+            "hasdocument": true,
+            "singleversionroot": false,
+            "attributes": {
+              "agentcardid": {
+                "name": "agentcardid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "versionid": {
+                "name": "versionid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "self": {
+                "name": "self",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xid": {
+                "name": "xid",
+                "type": "xid",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "epoch": {
+                "name": "epoch",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "name": {
+                "name": "name",
+                "type": "string"
+              },
+              "isdefault": {
+                "name": "isdefault",
+                "type": "boolean",
+                "readonly": true,
+                "required": true,
+                "default": false
+              },
+              "description": {
+                "name": "description",
+                "type": "string"
+              },
+              "documentation": {
+                "name": "documentation",
+                "type": "url"
+              },
+              "labels": {
+                "name": "labels",
+                "type": "map",
+                "item": {
+                  "type": "string"
+                }
+              },
+              "createdat": {
+                "name": "createdat",
+                "type": "timestamp",
+                "required": true
+              },
+              "modifiedat": {
+                "name": "modifiedat",
+                "type": "timestamp",
+                "required": true
+              },
+              "ancestor": {
+                "name": "ancestor",
+                "type": "string",
+                "required": true
+              },
+              "contenttype": {
+                "name": "contenttype",
+                "type": "string"
+              },
+              "specversion": {
+                "name": "specversion",
+                "type": "string"
+              },
+              "*": {
+                "name": "*",
+                "type": "any"
+              },
+              "agentcardurl": {
+                "name": "agentcardurl",
+                "type": "url"
+              },
+              "agentcardproxyurl": {
+                "name": "agentcardproxyurl",
+                "type": "url"
+              },
+              "agentcard": {
+                "name": "agentcard",
+                "type": "any"
+              },
+              "metaurl": {
+                "name": "metaurl",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "meta": {
+                "name": "meta",
+                "type": "object",
+                "attributes": {
+                  "*": {
+                    "name": "*",
+                    "type": "any"
+                  }
+                }
+              },
+              "versionsurl": {
+                "name": "versionsurl",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "versionscount": {
+                "name": "versionscount",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "versions": {
+                "name": "versions",
+                "type": "map",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "*": {
+                      "name": "*",
+                      "type": "any"
+                    }
+                  }
+                }
+              }
+            },
+            "metaattributes": {
+              "agentcardid": {
+                "name": "agentcardid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "self": {
+                "name": "self",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xid": {
+                "name": "xid",
+                "type": "xid",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xref": {
+                "name": "xref",
+                "type": "url"
+              },
+              "epoch": {
+                "name": "epoch",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "createdat": {
+                "name": "createdat",
+                "type": "timestamp",
+                "required": true
+              },
+              "modifiedat": {
+                "name": "modifiedat",
+                "type": "timestamp",
+                "required": true
+              },
+              "readonly": {
+                "name": "readonly",
+                "type": "boolean",
+                "readonly": true,
+                "required": true,
+                "default": false
+              },
+              "compatibility": {
+                "name": "compatibility",
+                "type": "string",
+                "enum": [
+                  "none",
+                  "backward",
+                  "backward_transitive",
+                  "forward",
+                  "forward_transitive",
+                  "full",
+                  "full_transitive"
+                ],
+                "strict": false,
+                "required": true,
+                "default": "none"
+              },
+              "compatibilityauthority": {
+                "name": "compatibilityauthority",
+                "type": "string",
+                "enum": [
+                  "external",
+                  "server"
+                ],
+                "strict": false
+              },
+              "deprecated": {
+                "name": "deprecated",
+                "type": "object",
+                "attributes": {
+                  "alternative": {
+                    "name": "alternative",
+                    "type": "url"
+                  },
+                  "docs": {
+                    "name": "docs",
+                    "type": "url"
+                  },
+                  "effective": {
+                    "name": "effective",
+                    "type": "timestamp"
+                  },
+                  "removal": {
+                    "name": "removal",
+                    "type": "timestamp"
+                  },
+                  "*": {
+                    "name": "*",
+                    "type": "any"
+                  }
+                }
+              },
+              "validation": {
+                "name": "validation",
+                "type": "boolean",
+                "description": "Verify compliance with specified schema 'specversion'",
+                "required": true,
+                "default": false
+              },
+              "defaultversionid": {
+                "name": "defaultversionid",
+                "type": "string",
+                "required": true
+              },
+              "defaultversionurl": {
+                "name": "defaultversionurl",
+                "type": "url",
+                "readonly": true,
+                "required": true
+              },
+              "defaultversionsticky": {
+                "name": "defaultversionsticky",
+                "type": "boolean",
+                "required": true,
+                "default": false
+              }
+            }
+          }
+        }
+      },
+      "mcpproviders": {
+        "plural": "mcpproviders",
+        "singular": "mcpprovider",
+        "description": "Registry of Model Context Protocol (MCP) servers and their capabilities, organized by provider.",
+        "attributes": {
+          "mcpproviderid": {
+            "name": "mcpproviderid",
+            "type": "string",
+            "immutable": true,
+            "required": true
+          },
+          "self": {
+            "name": "self",
+            "type": "url",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "xid": {
+            "name": "xid",
+            "type": "xid",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "epoch": {
+            "name": "epoch",
+            "type": "uinteger",
+            "readonly": true,
+            "required": true
+          },
+          "name": {
+            "name": "name",
+            "type": "string"
+          },
+          "description": {
+            "name": "description",
+            "type": "string"
+          },
+          "documentation": {
+            "name": "documentation",
+            "type": "url"
+          },
+          "labels": {
+            "name": "labels",
+            "type": "map",
+            "item": {
+              "type": "string"
+            }
+          },
+          "createdat": {
+            "name": "createdat",
+            "type": "timestamp",
+            "required": true
+          },
+          "modifiedat": {
+            "name": "modifiedat",
+            "type": "timestamp",
+            "required": true
+          },
+          "serversurl": {
+            "name": "serversurl",
+            "type": "url",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "serverscount": {
+            "name": "serverscount",
+            "type": "uinteger",
+            "readonly": true,
+            "required": true
+          },
+          "servers": {
+            "name": "servers",
+            "type": "map",
+            "item": {
+              "type": "object",
+              "attributes": {
+                "*": {
+                  "name": "*",
+                  "type": "any"
+                }
+              }
+            }
+          }
+        },
+        "resources": {
+          "servers": {
+            "plural": "servers",
+            "singular": "server",
+            "maxversions": 0,
+            "setversionid": false,
+            "setdefaultversionsticky": false,
+            "hasdocument": false,
+            "singleversionroot": true,
+            "attributes": {
+              "serverid": {
+                "name": "serverid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "versionid": {
+                "name": "versionid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "self": {
+                "name": "self",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xid": {
+                "name": "xid",
+                "type": "xid",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "epoch": {
+                "name": "epoch",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "name": {
+                "name": "name",
+                "type": "string",
+                "description": "Unique reverse-DNS identifier of the repository."
+              },
+              "isdefault": {
+                "name": "isdefault",
+                "type": "boolean",
+                "readonly": true,
+                "required": true,
+                "default": false
+              },
+              "description": {
+                "name": "description",
+                "type": "string",
+                "description": "Repository or server overview."
+              },
+              "documentation": {
+                "name": "documentation",
+                "type": "url"
+              },
+              "labels": {
+                "name": "labels",
+                "type": "map",
+                "item": {
+                  "type": "string"
+                }
+              },
+              "createdat": {
+                "name": "createdat",
+                "type": "timestamp",
+                "required": true
+              },
+              "modifiedat": {
+                "name": "modifiedat",
+                "type": "timestamp",
+                "required": true
+              },
+              "ancestor": {
+                "name": "ancestor",
+                "type": "string",
+                "required": true
+              },
+              "contenttype": {
+                "name": "contenttype",
+                "type": "string"
+              },
+              "prompts": {
+                "name": "prompts",
+                "type": "array",
+                "description": "Static prompt templates bundled with this server.",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "arguments": {
+                      "name": "arguments",
+                      "type": "array",
+                      "item": {
+                        "type": "object",
+                        "attributes": {
+                          "description": {
+                            "name": "description",
+                            "type": "string"
+                          },
+                          "name": {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          "required": {
+                            "name": "required",
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    },
+                    "description": {
+                      "name": "description",
+                      "type": "string"
+                    },
+                    "name": {
+                      "name": "name",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "registries": {
+                "name": "registries",
+                "type": "array",
+                "description": "Package registry metadata blocks.",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "command_arguments": {
+                      "name": "command_arguments",
+                      "type": "object",
+                      "attributes": {
+                        "environment_variables": {
+                          "name": "environment_variables",
+                          "type": "array",
+                          "item": {
+                            "type": "object",
+                            "attributes": {
+                              "description": {
+                                "name": "description",
+                                "type": "string"
+                              },
+                              "name": {
+                                "name": "name",
+                                "type": "string"
+                              },
+                              "required": {
+                                "name": "required",
+                                "type": "boolean"
+                              }
+                            }
+                          }
+                        },
+                        "named_arguments": {
+                          "name": "named_arguments",
+                          "type": "array",
+                          "item": {
+                            "type": "string"
+                          }
+                        },
+                        "positional_arguments": {
+                          "name": "positional_arguments",
+                          "type": "array",
+                          "item": {
+                            "type": "string"
+                          }
+                        },
+                        "sub_commands": {
+                          "name": "sub_commands",
+                          "type": "array",
+                          "item": {
+                            "type": "object",
+                            "attributes": {
+                              "description": {
+                                "name": "description",
+                                "type": "string"
+                              },
+                              "name": {
+                                "name": "name",
+                                "type": "string"
+                              },
+                              "named_arguments": {
+                                "name": "named_arguments",
+                                "type": "array",
+                                "item": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "license": {
+                      "name": "license",
+                      "type": "string",
+                      "description": "License of the package."
+                    },
+                    "name": {
+                      "name": "name",
+                      "type": "string",
+                      "description": "Name of the registry."
+                    },
+                    "package_name": {
+                      "name": "package_name",
+                      "type": "string",
+                      "description": "Name of the package."
+                    }
+                  }
+                }
+              },
+              "remotes": {
+                "name": "remotes",
+                "type": "array",
+                "description": "Source‑code hosting locations.",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "transporttype": {
+                      "name": "transporttype",
+                      "type": "string",
+                      "description": "Transport type of the remote."
+                    },
+                    "url": {
+                      "name": "url",
+                      "type": "url",
+                      "description": "URL of the remote."
+                    }
+                  }
+                }
+              },
+              "repo_ref": {
+                "name": "repo_ref",
+                "type": "string",
+                "description": "Repository reference for the server."
+              },
+              "resources": {
+                "name": "resources",
+                "type": "array",
+                "description": "Data resources the server can expose or subscribe to.",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "description": {
+                      "name": "description",
+                      "type": "string"
+                    },
+                    "mimetype": {
+                      "name": "mimetype",
+                      "type": "string"
+                    },
+                    "name": {
+                      "name": "name",
+                      "type": "string"
+                    },
+                    "uritemplate": {
+                      "name": "uritemplate",
+                      "type": "uritemplate"
+                    }
+                  }
+                }
+              },
+              "tools": {
+                "name": "tools",
+                "type": "array",
+                "description": "Tool definitions invocable via the MCP runtime.",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "description": {
+                      "name": "description",
+                      "type": "string"
+                    },
+                    "inputschema": {
+                      "name": "inputschema",
+                      "type": "any"
+                    },
+                    "name": {
+                      "name": "name",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "version_detail": {
+                "name": "version_detail",
+                "type": "object",
+                "description": "Version detail for the server.",
+                "attributes": {
+                  "version": {
+                    "name": "version",
+                    "type": "string",
+                    "description": "Semantic version number detail."
+                  }
+                }
+              },
+              "metaurl": {
+                "name": "metaurl",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "meta": {
+                "name": "meta",
+                "type": "object",
+                "attributes": {
+                  "*": {
+                    "name": "*",
+                    "type": "any"
+                  }
+                }
+              },
+              "versionsurl": {
+                "name": "versionsurl",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "versionscount": {
+                "name": "versionscount",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "versions": {
+                "name": "versions",
+                "type": "map",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "*": {
+                      "name": "*",
+                      "type": "any"
+                    }
+                  }
+                }
+              }
+            },
+            "metaattributes": {
+              "serverid": {
+                "name": "serverid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "self": {
+                "name": "self",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xid": {
+                "name": "xid",
+                "type": "xid",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xref": {
+                "name": "xref",
+                "type": "url"
+              },
+              "epoch": {
+                "name": "epoch",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "createdat": {
+                "name": "createdat",
+                "type": "timestamp",
+                "required": true
+              },
+              "modifiedat": {
+                "name": "modifiedat",
+                "type": "timestamp",
+                "required": true
+              },
+              "readonly": {
+                "name": "readonly",
+                "type": "boolean",
+                "readonly": true,
+                "required": true,
+                "default": false
+              },
+              "compatibility": {
+                "name": "compatibility",
+                "type": "string",
+                "enum": [
+                  "none",
+                  "backward",
+                  "backward_transitive",
+                  "forward",
+                  "forward_transitive",
+                  "full",
+                  "full_transitive"
+                ],
+                "strict": false,
+                "required": true,
+                "default": "none"
+              },
+              "compatibilityauthority": {
+                "name": "compatibilityauthority",
+                "type": "string",
+                "enum": [
+                  "external",
+                  "server"
+                ],
+                "strict": false
+              },
+              "deprecated": {
+                "name": "deprecated",
+                "type": "object",
+                "attributes": {
+                  "alternative": {
+                    "name": "alternative",
+                    "type": "url"
+                  },
+                  "docs": {
+                    "name": "docs",
+                    "type": "url"
+                  },
+                  "effective": {
+                    "name": "effective",
+                    "type": "timestamp"
+                  },
+                  "removal": {
+                    "name": "removal",
+                    "type": "timestamp"
+                  },
+                  "*": {
+                    "name": "*",
+                    "type": "any"
+                  }
+                }
+              },
+              "defaultversionid": {
+                "name": "defaultversionid",
+                "type": "string",
+                "required": true
+              },
+              "defaultversionurl": {
+                "name": "defaultversionurl",
+                "type": "url",
+                "readonly": true,
+                "required": true
+              },
+              "defaultversionsticky": {
+                "name": "defaultversionsticky",
+                "type": "boolean",
+                "required": true,
+                "default": false
+              }
+            }
+          }
+        }
+      },
+      "schemagroups": {
+        "plural": "schemagroups",
+        "singular": "schemagroup",
+        "modelversion": "1.0-rc1",
+        "compatiblewith": "https://xregistry.io/xreg/domains/schema/specs/model.json",
+        "attributes": {
+          "schemagroupid": {
+            "name": "schemagroupid",
+            "type": "string",
+            "immutable": true,
+            "required": true
+          },
+          "self": {
+            "name": "self",
+            "type": "url",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "xid": {
+            "name": "xid",
+            "type": "xid",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "epoch": {
+            "name": "epoch",
+            "type": "uinteger",
+            "readonly": true,
+            "required": true
+          },
+          "name": {
+            "name": "name",
+            "type": "string"
+          },
+          "description": {
+            "name": "description",
+            "type": "string"
+          },
+          "documentation": {
+            "name": "documentation",
+            "type": "url"
+          },
+          "labels": {
+            "name": "labels",
+            "type": "map",
+            "item": {
+              "type": "string"
+            }
+          },
+          "createdat": {
+            "name": "createdat",
+            "type": "timestamp",
+            "required": true
+          },
+          "modifiedat": {
+            "name": "modifiedat",
+            "type": "timestamp",
+            "required": true
+          },
+          "*": {
+            "name": "*",
+            "type": "any"
+          },
+          "schemasurl": {
+            "name": "schemasurl",
+            "type": "url",
+            "readonly": true,
+            "immutable": true,
+            "required": true
+          },
+          "schemascount": {
+            "name": "schemascount",
+            "type": "uinteger",
+            "readonly": true,
+            "required": true
+          },
+          "schemas": {
+            "name": "schemas",
+            "type": "map",
+            "item": {
+              "type": "object",
+              "attributes": {
+                "*": {
+                  "name": "*",
+                  "type": "any"
+                }
+              }
+            }
+          }
+        },
+        "resources": {
+          "schemas": {
+            "plural": "schemas",
+            "singular": "schema",
+            "maxversions": 0,
+            "setversionid": true,
+            "setdefaultversionsticky": true,
+            "hasdocument": true,
+            "singleversionroot": false,
+            "modelversion": "1.0-rc1",
+            "compatiblewith": "https://xregistry.io/xreg/domains/schema/specs/model.json",
+            "attributes": {
+              "schemaid": {
+                "name": "schemaid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "versionid": {
+                "name": "versionid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "self": {
+                "name": "self",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xid": {
+                "name": "xid",
+                "type": "xid",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "epoch": {
+                "name": "epoch",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "name": {
+                "name": "name",
+                "type": "string"
+              },
+              "isdefault": {
+                "name": "isdefault",
+                "type": "boolean",
+                "readonly": true,
+                "required": true,
+                "default": false
+              },
+              "description": {
+                "name": "description",
+                "type": "string"
+              },
+              "documentation": {
+                "name": "documentation",
+                "type": "url"
+              },
+              "labels": {
+                "name": "labels",
+                "type": "map",
+                "item": {
+                  "type": "string"
+                }
+              },
+              "createdat": {
+                "name": "createdat",
+                "type": "timestamp",
+                "required": true
+              },
+              "modifiedat": {
+                "name": "modifiedat",
+                "type": "timestamp",
+                "required": true
+              },
+              "ancestor": {
+                "name": "ancestor",
+                "type": "string",
+                "required": true
+              },
+              "contenttype": {
+                "name": "contenttype",
+                "type": "string"
+              },
+              "format": {
+                "name": "format",
+                "type": "string",
+                "description": "Schema format identifier for this schema version"
+              },
+              "*": {
+                "name": "*",
+                "type": "any"
+              },
+              "schemaurl": {
+                "name": "schemaurl",
+                "type": "url"
+              },
+              "schemaproxyurl": {
+                "name": "schemaproxyurl",
+                "type": "url"
+              },
+              "schema": {
+                "name": "schema",
+                "type": "any"
+              },
+              "metaurl": {
+                "name": "metaurl",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "meta": {
+                "name": "meta",
+                "type": "object",
+                "attributes": {
+                  "*": {
+                    "name": "*",
+                    "type": "any"
+                  }
+                }
+              },
+              "versionsurl": {
+                "name": "versionsurl",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "versionscount": {
+                "name": "versionscount",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "versions": {
+                "name": "versions",
+                "type": "map",
+                "item": {
+                  "type": "object",
+                  "attributes": {
+                    "*": {
+                      "name": "*",
+                      "type": "any"
+                    }
+                  }
+                }
+              }
+            },
+            "metaattributes": {
+              "schemaid": {
+                "name": "schemaid",
+                "type": "string",
+                "immutable": true,
+                "required": true
+              },
+              "self": {
+                "name": "self",
+                "type": "url",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xid": {
+                "name": "xid",
+                "type": "xid",
+                "readonly": true,
+                "immutable": true,
+                "required": true
+              },
+              "xref": {
+                "name": "xref",
+                "type": "url"
+              },
+              "epoch": {
+                "name": "epoch",
+                "type": "uinteger",
+                "readonly": true,
+                "required": true
+              },
+              "createdat": {
+                "name": "createdat",
+                "type": "timestamp",
+                "required": true
+              },
+              "modifiedat": {
+                "name": "modifiedat",
+                "type": "timestamp",
+                "required": true
+              },
+              "readonly": {
+                "name": "readonly",
+                "type": "boolean",
+                "readonly": true,
+                "required": true,
+                "default": false
+              },
+              "compatibility": {
+                "name": "compatibility",
+                "type": "string",
+                "enum": [
+                  "none",
+                  "backward",
+                  "backward_transitive",
+                  "forward",
+                  "forward_transitive",
+                  "full",
+                  "full_transitive"
+                ],
+                "strict": false,
+                "required": true,
+                "default": "none"
+              },
+              "compatibilityauthority": {
+                "name": "compatibilityauthority",
+                "type": "string",
+                "enum": [
+                  "external",
+                  "server"
+                ],
+                "strict": false
+              },
+              "deprecated": {
+                "name": "deprecated",
+                "type": "object",
+                "attributes": {
+                  "alternative": {
+                    "name": "alternative",
+                    "type": "url"
+                  },
+                  "docs": {
+                    "name": "docs",
+                    "type": "url"
+                  },
+                  "effective": {
+                    "name": "effective",
+                    "type": "timestamp"
+                  },
+                  "removal": {
+                    "name": "removal",
+                    "type": "timestamp"
+                  },
+                  "*": {
+                    "name": "*",
+                    "type": "any"
+                  }
+                }
+              },
+              "validation": {
+                "name": "validation",
+                "type": "boolean",
+                "description": "Verify compliance with specified schema 'format'",
+                "required": true,
+                "default": false
+              },
+              "defaultversionid": {
+                "name": "defaultversionid",
+                "type": "string",
+                "required": true
+              },
+              "defaultversionurl": {
+                "name": "defaultversionurl",
+                "type": "url",
+                "readonly": true,
+                "required": true
+              },
+              "defaultversionsticky": {
+                "name": "defaultversionsticky",
+                "type": "boolean",
+                "required": true,
+                "default": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "agentcardprovidersurl": "#/agentcardproviders",
+  "agentcardproviders": {
+    "contoso.com": {
+      "agentcardproviderid": "contoso.com",
+      "self": "#/agentcardproviders/contoso.com",
+      "xid": "/agentcardproviders/contoso.com",
+      "epoch": 1,
+      "createdat": "2025-05-21T12:03:49.809697574Z",
+      "modifiedat": "2025-05-21T12:03:49.809697574Z",
+
+      "agentcardsurl": "#/agentcardproviders/contoso.com/agentcards",
+      "agentcards": {
+        "reimbursement": {
+          "agentcardid": "reimbursement",
+          "self": "#/agentcardproviders/contoso.com/agentcards/reimbursement",
+          "xid": "/agentcardproviders/contoso.com/agentcards/reimbursement",
+
+          "metaurl": "#/agentcardproviders/contoso.com/agentcards/reimbursement/meta",
+          "meta": {
+            "agentcardid": "reimbursement",
+            "self": "#/agentcardproviders/contoso.com/agentcards/reimbursement/meta",
+            "xid": "/agentcardproviders/contoso.com/agentcards/reimbursement/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:49.809697574Z",
+            "modifiedat": "2025-05-21T12:03:49.809697574Z",
+            "readonly": false,
+            "compatibility": "none",
+            "validation": false,
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/agentcardproviders/contoso.com/agentcards/reimbursement/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/agentcardproviders/contoso.com/agentcards/reimbursement/versions",
+          "versions": {
+            "1": {
+              "agentcardid": "reimbursement",
+              "versionid": "1",
+              "self": "#/agentcardproviders/contoso.com/agentcards/reimbursement/versions/1",
+              "xid": "/agentcardproviders/contoso.com/agentcards/reimbursement/versions/1",
+              "epoch": 1,
+              "isdefault": true,
+              "createdat": "2025-05-21T12:03:49.809697574Z",
+              "modifiedat": "2025-05-21T12:03:49.809697574Z",
+              "ancestor": "1",
+              "agentcardbase64": "ew0KICAgICJhZ2VudGNhcmRpZCI6ICJyZWltYnVyc2VtZW50IiwNCiAgICAiZGVzY3JpcHRpb24iOiAiUmVpbWJ1cnNlbWVudCBBZ2VudC4gSGFuZGxlcyBlbXBsb3llZSBleHBlbnNlIHJlaW1idXJzZW1lbnQgcHJvY2Vzc2luZy4iLA0KICAgICJuYW1lIjogIlJlaW1idXJzZW1lbnQgQWdlbnQiLA0KICAgICJhZ2VudGNhcmQiOiB7DQogICAgICAgICJuYW1lIjogIlJlaW1idXJzZW1lbnQgQWdlbnQiLA0KICAgICAgICAiZGVzY3JpcHRpb24iOiAiSGFuZGxlcyBlbXBsb3llZSBleHBlbnNlIHJlaW1idXJzZW1lbnQgcHJvY2Vzc2luZy4iLA0KICAgICAgICAidXJsIjogImh0dHBzOi8vcmVpbWJ1cnNlbWVudC5leGFtcGxlLmNvbS9hMmEiLA0KICAgICAgICAidmVyc2lvbiI6ICIxLjAuMCIsDQogICAgICAgICJjYXBhYmlsaXRpZXMiOiB7DQogICAgICAgICAgICAic3RyZWFtaW5nIjogdHJ1ZSwNCiAgICAgICAgICAgICJwdXNoTm90aWZpY2F0aW9ucyI6IGZhbHNlLA0KICAgICAgICAgICAgInN0YXRlVHJhbnNpdGlvbkhpc3RvcnkiOiB0cnVlDQogICAgICAgIH0sDQogICAgICAgICJhdXRoZW50aWNhdGlvbiI6IHsNCiAgICAgICAgICAgICJzY2hlbWVzIjogWw0KICAgICAgICAgICAgICAgICJhcGlLZXkiDQogICAgICAgICAgICBdDQogICAgICAgIH0sDQogICAgICAgICJkZWZhdWx0SW5wdXRNb2RlcyI6IFsNCiAgICAgICAgICAgICJ0ZXh0Ig0KICAgICAgICBdLA0KICAgICAgICAiZGVmYXVsdE91dHB1dE1vZGVzIjogWw0KICAgICAgICAgICAgInRleHQiDQogICAgICAgIF0sDQogICAgICAgICJza2lsbHMiOiBbDQogICAgICAgICAgICB7DQogICAgICAgICAgICAgICAgImlkIjogInByb2Nlc3NfcmVpbWJ1cnNlbWVudCIsDQogICAgICAgICAgICAgICAgIm5hbWUiOiAiUHJvY2VzcyBSZWltYnVyc2VtZW50IiwNCiAgICAgICAgICAgICAgICAiZGVzY3JpcHRpb24iOiAiUHJvY2Vzc2VzIGV4cGVuc2UgcmVpbWJ1cnNlbWVudCByZXF1ZXN0cyBiYXNlZCBvbiBwcm92aWRlZCBkZXRhaWxzLiIsDQogICAgICAgICAgICAgICAgImlucHV0TW9kZXMiOiBbDQogICAgICAgICAgICAgICAgICAgICJ0ZXh0Ig0KICAgICAgICAgICAgICAgIF0sDQogICAgICAgICAgICAgICAgIm91dHB1dE1vZGVzIjogWw0KICAgICAgICAgICAgICAgICAgICAidGV4dCINCiAgICAgICAgICAgICAgICBdLA0KICAgICAgICAgICAgICAgICJleGFtcGxlcyI6IFsNCiAgICAgICAgICAgICAgICAgICAgIlJlaW1idXJzZSDigqwyMCBmb3IgY2xpZW50IGx1bmNoIG9uIDIwMjUtMDUtMTAuIiwNCiAgICAgICAgICAgICAgICAgICAgIlN1Ym1pdCBleHBlbnNlIGZvciDigqw1MCB0YXhpIGZhcmUgZnJvbSAyMDI1LTA1LTEyLiINCiAgICAgICAgICAgICAgICBdDQogICAgICAgICAgICB9DQogICAgICAgIF0NCiAgICB9DQp9"
+            }
+          },
+          "versionscount": 1
+        }
+      },
+      "agentcardscount": 1
+    }
+  },
+  "agentcardproviderscount": 1,
+  "mcpprovidersurl": "#/mcpproviders",
+  "mcpproviders": {
+    "MindscapeHQ": {
+      "mcpproviderid": "MindscapeHQ",
+      "self": "#/mcpproviders/MindscapeHQ",
+      "xid": "/mcpproviders/MindscapeHQ",
+      "epoch": 1,
+      "createdat": "2025-05-21T12:03:50.154912489Z",
+      "modifiedat": "2025-05-21T12:03:50.154912489Z",
+
+      "serversurl": "#/mcpproviders/MindscapeHQ/servers",
+      "servers": {
+        "mcp-server-raygun": {
+          "serverid": "mcp-server-raygun",
+          "self": "#/mcpproviders/MindscapeHQ/servers/mcp-server-raygun",
+          "xid": "/mcpproviders/MindscapeHQ/servers/mcp-server-raygun",
+
+          "metaurl": "#/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/meta",
+          "meta": {
+            "serverid": "mcp-server-raygun",
+            "self": "#/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/meta",
+            "xid": "/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:50.154912489Z",
+            "modifiedat": "2025-05-21T12:03:50.154912489Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/versions",
+          "versions": {
+            "1": {
+              "serverid": "mcp-server-raygun",
+              "versionid": "1",
+              "self": "#/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/versions/1",
+              "xid": "/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/versions/1",
+              "epoch": 1,
+              "name": "io.github.MindscapeHQ/mcp-server-raygun",
+              "isdefault": true,
+              "description": "MCP Server for Raygun's API V3 endpoints for interacting with your Crash Reporting and Real User Monitoring applications. This server provides comprehensive access to Raygun's API features through the Model Context Protocol.",
+              "createdat": "2025-05-21T12:03:50.154912489Z",
+              "modifiedat": "2025-05-21T12:03:50.154912489Z",
+              "ancestor": "1",
+              "prompts": [],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [
+                      {
+                        "description": "Your Raygun PAT token",
+                        "name": "RAYGUN_PAT_TOKEN",
+                        "required": true
+                      }
+                    ],
+                    "positional_arguments": [
+                      "-y",
+                      "@raygun.io/mcp-server-raygun"
+                    ],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "npm",
+                  "package_name": "@raygun.io/mcp-server-raygun"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "MindscapeHQ/mcp-server-raygun",
+              "resources": [],
+              "tools": [
+                {
+                  "description": "List all applications under your account",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_applications"
+                },
+                {
+                  "description": "Get application details by identifier",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_application"
+                },
+                {
+                  "description": "Get application details by API key",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_application_by_api_key"
+                },
+                {
+                  "description": "Generate a new API key for an application",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "regenerate_application_api_key"
+                },
+                {
+                  "description": "List error groups for an application",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_error_groups"
+                },
+                {
+                  "description": "Get detailed information about an error group",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_error_group"
+                },
+                {
+                  "description": "Set error group status to resolved",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "resolve_error_group"
+                },
+                {
+                  "description": "Set error group status to active",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "activate_error_group"
+                },
+                {
+                  "description": "Set error group status to ignored",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "ignore_error_group"
+                },
+                {
+                  "description": "Set error group status to permanently ignored",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "permanently_ignore_error_group"
+                },
+                {
+                  "description": "List deployments for an application",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_deployments"
+                },
+                {
+                  "description": "Get deployment details by identifier",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_deployment"
+                },
+                {
+                  "description": "Remove a deployment",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "delete_deployment"
+                },
+                {
+                  "description": "Update deployment information",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "update_deployment"
+                },
+                {
+                  "description": "Reprocess deployment commit data",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "reprocess_deployment_commits"
+                },
+                {
+                  "description": "List customers for an application",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_customers"
+                },
+                {
+                  "description": "List user sessions for an application",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_sessions"
+                },
+                {
+                  "description": "Get detailed session information",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_session"
+                },
+                {
+                  "description": "List monitored pages for an application",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_pages"
+                },
+                {
+                  "description": "Get time-series performance metrics",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_page_metrics_time_series"
+                },
+                {
+                  "description": "Get histogram of performance metrics",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_page_metrics_histogram"
+                },
+                {
+                  "description": "Get time-series error metrics",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_error_metrics_time_series"
+                },
+                {
+                  "description": "List source maps for an application",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_source_maps"
+                },
+                {
+                  "description": "Get source map details",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_source_map"
+                },
+                {
+                  "description": "Update source map information",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "update_source_map"
+                },
+                {
+                  "description": "Remove a source map",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "delete_source_map"
+                },
+                {
+                  "description": "Upload a new source map",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "upload_source_map"
+                },
+                {
+                  "description": "Remove all source maps",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "delete_all_source_maps"
+                },
+                {
+                  "description": "List pending team invitations",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list_invitations"
+                },
+                {
+                  "description": "Send a new team invitation",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "send_invitation"
+                },
+                {
+                  "description": "Get invitation details",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "get_invitation"
+                },
+                {
+                  "description": "Revoke a pending invitation",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "revoke_invitation"
+                }
+              ],
+              "version_detail": {
+                "version": "0.1.0"
+              }
+            }
+          },
+          "versionscount": 1
+        }
+      },
+      "serverscount": 1
+    },
+    "momentohq": {
+      "mcpproviderid": "momentohq",
+      "self": "#/mcpproviders/momentohq",
+      "xid": "/mcpproviders/momentohq",
+      "epoch": 1,
+      "createdat": "2025-05-21T12:03:50.348622203Z",
+      "modifiedat": "2025-05-21T12:03:50.348622203Z",
+
+      "serversurl": "#/mcpproviders/momentohq/servers",
+      "servers": {
+        "mcp-momento": {
+          "serverid": "mcp-momento",
+          "self": "#/mcpproviders/momentohq/servers/mcp-momento",
+          "xid": "/mcpproviders/momentohq/servers/mcp-momento",
+
+          "metaurl": "#/mcpproviders/momentohq/servers/mcp-momento/meta",
+          "meta": {
+            "serverid": "mcp-momento",
+            "self": "#/mcpproviders/momentohq/servers/mcp-momento/meta",
+            "xid": "/mcpproviders/momentohq/servers/mcp-momento/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:50.348622203Z",
+            "modifiedat": "2025-05-21T12:03:50.348622203Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/momentohq/servers/mcp-momento/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/momentohq/servers/mcp-momento/versions",
+          "versions": {
+            "1": {
+              "serverid": "mcp-momento",
+              "versionid": "1",
+              "self": "#/mcpproviders/momentohq/servers/mcp-momento/versions/1",
+              "xid": "/mcpproviders/momentohq/servers/mcp-momento/versions/1",
+              "epoch": 1,
+              "name": "io.github.momentohq/mcp-momento",
+              "isdefault": true,
+              "description": "A simple Model Context Protocol (MCP) server implementation for Momento Cache.",
+              "createdat": "2025-05-21T12:03:50.348622203Z",
+              "modifiedat": "2025-05-21T12:03:50.348622203Z",
+              "ancestor": "1",
+              "prompts": [],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [
+                      {
+                        "description": "API key for Momento Cache",
+                        "name": "MOMENTO_API_KEY",
+                        "required": true
+                      },
+                      {
+                        "description": "Name of the cache to use",
+                        "name": "MOMENTO_CACHE_NAME",
+                        "required": false
+                      },
+                      {
+                        "description": "Default TTL for cache entries in seconds",
+                        "name": "DEFAULT_TTL_SECONDS",
+                        "required": false
+                      }
+                    ],
+                    "positional_arguments": [
+                      "-y",
+                      "@gomomento/mcp-momento"
+                    ],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "npm",
+                  "package_name": "@gomomento/mcp-momento"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "momentohq/mcp-momento",
+              "resources": [],
+              "tools": [
+                {
+                  "description": "get a key-value pair from the cache",
+                  "inputschema": {
+                    "properties": {
+                      "cacheName": {
+                        "description": "The name of the cache to get the value from. Uses the default cache name if not provided.",
+                        "type": "string"
+                      },
+                      "key": {
+                        "description": "The key to get from the cache",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "key"
+                    ],
+                    "type": "object"
+                  },
+                  "name": "get"
+                },
+                {
+                  "description": "set a key-value pair in the cache",
+                  "inputschema": {
+                    "properties": {
+                      "cacheName": {
+                        "description": "The name of the cache to set the value in. Uses the default cache name if not provided.",
+                        "type": "string"
+                      },
+                      "key": {
+                        "description": "The key to set in the cache",
+                        "type": "string"
+                      },
+                      "ttl": {
+                        "description": "The TTL for the key in seconds",
+                        "type": "number"
+                      },
+                      "value": {
+                        "description": "The value to set in the cache",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "key",
+                      "value"
+                    ],
+                    "type": "object"
+                  },
+                  "name": "set"
+                },
+                {
+                  "description": "Lists all cache names in your Momento account",
+                  "inputschema": {
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
+                  },
+                  "name": "list-caches"
+                },
+                {
+                  "description": "Creates a new cache",
+                  "inputschema": {
+                    "properties": {
+                      "name": {
+                        "description": "The name of the cache to create",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "name": "create-cache"
+                },
+                {
+                  "description": "Deletes a cache and all contained values from your Momento account",
+                  "inputschema": {
+                    "properties": {
+                      "name": {
+                        "description": "The name of the cache to delete",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name"
+                    ],
+                    "type": "object"
+                  },
+                  "name": "delete-cache"
+                },
+                {
+                  "description": "publish a value to a topic",
+                  "inputschema": {
+                    "properties": {
+                      "cacheName": {
+                        "description": "The name of the cache to set the value in. Uses the default cache name if not provided.",
+                        "type": "string"
+                      },
+                      "topicName": {
+                        "description": "The name of the topic to publish the value to. Uses the default topic name if not provided.",
+                        "type": "string"
+                      },
+                      "value": {
+                        "description": "The value to publish",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "value"
+                    ],
+                    "type": "object"
+                  },
+                  "name": "publish"
+                }
+              ],
+              "version_detail": {
+                "version": "0.1.0"
+              }
+            }
+          },
+          "versionscount": 1
+        }
+      },
+      "serverscount": 1
+    },
+    "motherduckdb": {
+      "mcpproviderid": "motherduckdb",
+      "self": "#/mcpproviders/motherduckdb",
+      "xid": "/mcpproviders/motherduckdb",
+      "epoch": 1,
+      "createdat": "2025-05-21T12:03:50.290033763Z",
+      "modifiedat": "2025-05-21T12:03:50.290033763Z",
+
+      "serversurl": "#/mcpproviders/motherduckdb/servers",
+      "servers": {
+        "mcp-server-motherduck": {
+          "serverid": "mcp-server-motherduck",
+          "self": "#/mcpproviders/motherduckdb/servers/mcp-server-motherduck",
+          "xid": "/mcpproviders/motherduckdb/servers/mcp-server-motherduck",
+
+          "metaurl": "#/mcpproviders/motherduckdb/servers/mcp-server-motherduck/meta",
+          "meta": {
+            "serverid": "mcp-server-motherduck",
+            "self": "#/mcpproviders/motherduckdb/servers/mcp-server-motherduck/meta",
+            "xid": "/mcpproviders/motherduckdb/servers/mcp-server-motherduck/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:50.290033763Z",
+            "modifiedat": "2025-05-21T12:03:50.290033763Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions",
+          "versions": {
+            "1": {
+              "serverid": "mcp-server-motherduck",
+              "versionid": "1",
+              "self": "#/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions/1",
+              "xid": "/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions/1",
+              "epoch": 1,
+              "name": "io.github.motherduckdb/mcp-server-motherduck",
+              "isdefault": true,
+              "description": "An MCP server implementation that interacts with DuckDB and MotherDuck databases, providing SQL analytics capabilities to AI Assistants and IDEs.",
+              "createdat": "2025-05-21T12:03:50.290033763Z",
+              "modifiedat": "2025-05-21T12:03:50.290033763Z",
+              "ancestor": "1",
+              "prompts": [
+                {
+                  "description": "A prompt to initialize a connection to DuckDB or MotherDuck and start working with it",
+                  "name": "duckdb-motherduck-initial-prompt"
+                }
+              ],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [],
+                    "positional_arguments": [
+                      "--db-path",
+                      "md:",
+                      "--motherduck-token",
+                      "\u003cYOUR_MOTHERDUCK_TOKEN_HERE\u003e"
+                    ],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "unknown",
+                  "package_name": "unknown"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "motherduckdb/mcp-server-motherduck",
+              "resources": [],
+              "tools": [
+                {
+                  "description": "Execute a SQL query on the DuckDB or MotherDuck database",
+                  "inputschema": {
+                    "properties": {
+                      "query": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "query"
+                    ],
+                    "type": "object"
+                  },
+                  "name": "query"
+                }
+              ],
+              "version_detail": {
+                "version": "0.0.0"
+              }
+            }
+          },
+          "versionscount": 1
+        }
+      },
+      "serverscount": 1
+    },
+    "neo4j-contrib": {
+      "mcpproviderid": "neo4j-contrib",
+      "self": "#/mcpproviders/neo4j-contrib",
+      "xid": "/mcpproviders/neo4j-contrib",
+      "epoch": 1,
+      "createdat": "2025-05-21T12:03:49.991067059Z",
+      "modifiedat": "2025-05-21T12:03:49.991067059Z",
+
+      "serversurl": "#/mcpproviders/neo4j-contrib/servers",
+      "servers": {
+        "mcp-neo4j": {
+          "serverid": "mcp-neo4j",
+          "self": "#/mcpproviders/neo4j-contrib/servers/mcp-neo4j",
+          "xid": "/mcpproviders/neo4j-contrib/servers/mcp-neo4j",
+
+          "metaurl": "#/mcpproviders/neo4j-contrib/servers/mcp-neo4j/meta",
+          "meta": {
+            "serverid": "mcp-neo4j",
+            "self": "#/mcpproviders/neo4j-contrib/servers/mcp-neo4j/meta",
+            "xid": "/mcpproviders/neo4j-contrib/servers/mcp-neo4j/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:49.991067059Z",
+            "modifiedat": "2025-05-21T12:03:49.991067059Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/neo4j-contrib/servers/mcp-neo4j/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/neo4j-contrib/servers/mcp-neo4j/versions",
+          "versions": {
+            "1": {
+              "serverid": "mcp-neo4j",
+              "versionid": "1",
+              "self": "#/mcpproviders/neo4j-contrib/servers/mcp-neo4j/versions/1",
+              "xid": "/mcpproviders/neo4j-contrib/servers/mcp-neo4j/versions/1",
+              "epoch": 1,
+              "name": "io.github.neo4j-contrib/mcp-neo4j",
+              "isdefault": true,
+              "description": "Model Context Protocol (MCP) servers for managing context between large language models (LLMs) and Neo4j external systems, including natural language to Cypher queries, knowledge graph memory, and Neo4j Aura cloud service management.",
+              "createdat": "2025-05-21T12:03:49.991067059Z",
+              "modifiedat": "2025-05-21T12:03:49.991067059Z",
+              "ancestor": "1",
+              "prompts": [],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [],
+                    "positional_arguments": [],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "npm",
+                  "package_name": "unspecified"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "neo4j-contrib/mcp-neo4j",
+              "resources": [],
+              "tools": [],
+              "version_detail": {
+                "version": "0.0.0"
+              }
+            }
+          },
+          "versionscount": 1
+        }
+      },
+      "serverscount": 1
+    },
+    "quarkiverse": {
+      "mcpproviderid": "quarkiverse",
+      "self": "#/mcpproviders/quarkiverse",
+      "xid": "/mcpproviders/quarkiverse",
+      "epoch": 2,
+      "createdat": "2025-05-21T12:03:49.90025103Z",
+      "modifiedat": "2025-05-21T12:03:49.948847097Z",
+
+      "serversurl": "#/mcpproviders/quarkiverse/servers",
+      "servers": {
+        "quarkus-mcp-server": {
+          "serverid": "quarkus-mcp-server",
+          "self": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-server",
+          "xid": "/mcpproviders/quarkiverse/servers/quarkus-mcp-server",
+
+          "metaurl": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-server/meta",
+          "meta": {
+            "serverid": "quarkus-mcp-server",
+            "self": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-server/meta",
+            "xid": "/mcpproviders/quarkiverse/servers/quarkus-mcp-server/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:49.90025103Z",
+            "modifiedat": "2025-05-21T12:03:49.90025103Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-server/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-server/versions",
+          "versions": {
+            "1": {
+              "serverid": "quarkus-mcp-server",
+              "versionid": "1",
+              "self": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-server/versions/1",
+              "xid": "/mcpproviders/quarkiverse/servers/quarkus-mcp-server/versions/1",
+              "epoch": 1,
+              "name": "io.github.quarkiverse/quarkus-mcp-server",
+              "isdefault": true,
+              "description": "This extension provides declarative and programmatic APIs that enable developers to implement the MCP server features easily.",
+              "documentation": "https://quarkiverse.github.io/quarkiverse-docs/quarkus-mcp-server/dev/index.html",
+              "createdat": "2025-05-21T12:03:49.90025103Z",
+              "modifiedat": "2025-05-21T12:03:49.90025103Z",
+              "ancestor": "1",
+              "prompts": [
+                {
+                  "arguments": [
+                    {
+                      "name": "lang",
+                      "required": false
+                    }
+                  ],
+                  "name": "code_assist"
+                }
+              ],
+              "registries": [],
+              "remotes": [
+                {
+                  "transporttype": "http",
+                  "url": "unspecified"
+                }
+              ],
+              "repo_ref": "quarkiverse/quarkus-mcp-server",
+              "resources": [
+                {
+                  "name": "alpha",
+                  "uritemplate": "file:///project/alpha"
+                }
+              ],
+              "tools": [
+                {
+                  "description": "Converts the string value to lower case",
+                  "name": "toLowerCase"
+                }
+              ],
+              "version_detail": {
+                "version": "0.0.0"
+              }
+            }
+          },
+          "versionscount": 1
+        },
+        "quarkus-mcp-servers": {
+          "serverid": "quarkus-mcp-servers",
+          "self": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-servers",
+          "xid": "/mcpproviders/quarkiverse/servers/quarkus-mcp-servers",
+
+          "metaurl": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/meta",
+          "meta": {
+            "serverid": "quarkus-mcp-servers",
+            "self": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/meta",
+            "xid": "/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:49.948847097Z",
+            "modifiedat": "2025-05-21T12:03:49.948847097Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/versions",
+          "versions": {
+            "1": {
+              "serverid": "quarkus-mcp-servers",
+              "versionid": "1",
+              "self": "#/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/versions/1",
+              "xid": "/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/versions/1",
+              "epoch": 1,
+              "name": "io.github.quarkiverse/quarkus-mcp-servers",
+              "isdefault": true,
+              "description": "Model Context Protocol servers implemented in Java using the Quarkus MCP server framework, enabling extension of MCP enabled LLM AI applications.",
+              "createdat": "2025-05-21T12:03:49.948847097Z",
+              "modifiedat": "2025-05-21T12:03:49.948847097Z",
+              "ancestor": "1",
+              "prompts": [],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [],
+                    "positional_arguments": [],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "jbang",
+                  "package_name": "quarkiverse/quarkus-mcp-servers"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "quarkiverse/quarkus-mcp-servers",
+              "resources": [],
+              "tools": [],
+              "version_detail": {
+                "version": "0.0.0"
+              }
+            }
+          },
+          "versionscount": 1
+        }
+      },
+      "serverscount": 2
+    },
+    "redis": {
+      "mcpproviderid": "redis",
+      "self": "#/mcpproviders/redis",
+      "xid": "/mcpproviders/redis",
+      "epoch": 2,
+      "createdat": "2025-05-21T12:03:50.036123133Z",
+      "modifiedat": "2025-05-21T12:03:50.083046453Z",
+
+      "serversurl": "#/mcpproviders/redis/servers",
+      "servers": {
+        "mcp-redis": {
+          "serverid": "mcp-redis",
+          "self": "#/mcpproviders/redis/servers/mcp-redis",
+          "xid": "/mcpproviders/redis/servers/mcp-redis",
+
+          "metaurl": "#/mcpproviders/redis/servers/mcp-redis/meta",
+          "versionsurl": "#/mcpproviders/redis/servers/mcp-redis/versions",
+          "versions": {},
+          "versionscount": 0
+        },
+        "mcp-redis-cloud": {
+          "serverid": "mcp-redis-cloud",
+          "self": "#/mcpproviders/redis/servers/mcp-redis-cloud",
+          "xid": "/mcpproviders/redis/servers/mcp-redis-cloud",
+
+          "metaurl": "#/mcpproviders/redis/servers/mcp-redis-cloud/meta",
+          "meta": {
+            "serverid": "mcp-redis-cloud",
+            "self": "#/mcpproviders/redis/servers/mcp-redis-cloud/meta",
+            "xid": "/mcpproviders/redis/servers/mcp-redis-cloud/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:50.036123133Z",
+            "modifiedat": "2025-05-21T12:03:50.036123133Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/redis/servers/mcp-redis-cloud/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/redis/servers/mcp-redis-cloud/versions",
+          "versions": {
+            "1": {
+              "serverid": "mcp-redis-cloud",
+              "versionid": "1",
+              "self": "#/mcpproviders/redis/servers/mcp-redis-cloud/versions/1",
+              "xid": "/mcpproviders/redis/servers/mcp-redis-cloud/versions/1",
+              "epoch": 1,
+              "name": "io.github.redis/mcp-redis-cloud",
+              "isdefault": true,
+              "description": "Model Context Protocol (MCP) server for managing Redis Cloud resources via natural language commands.",
+              "createdat": "2025-05-21T12:03:50.036123133Z",
+              "modifiedat": "2025-05-21T12:03:50.036123133Z",
+              "ancestor": "1",
+              "prompts": [],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [
+                      {
+                        "description": "Redis Cloud API key",
+                        "name": "API_KEY",
+                        "required": true
+                      },
+                      {
+                        "description": "Redis Cloud API secret key",
+                        "name": "SECRET_KEY",
+                        "required": true
+                      }
+                    ],
+                    "positional_arguments": [
+                      "--experimental-fetch",
+                      "\u003cabsolute_path_to_project_root\u003e/dist/index.js"
+                    ],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "npm",
+                  "package_name": "@modelcontextprotocol/sdk"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "redis/mcp-redis-cloud",
+              "resources": [],
+              "tools": [],
+              "version_detail": {
+                "version": "0.0.0"
+              },
+
+              "meta": {
+                "serverid": "mcp-redis",
+                "self": "#/mcpproviders/redis/servers/mcp-redis/meta",
+                "xid": "/mcpproviders/redis/servers/mcp-redis/meta",
+                "epoch": 1,
+                "createdat": "2025-05-21T12:03:50.083046453Z",
+                "modifiedat": "2025-05-21T12:03:50.083046453Z",
+                "readonly": false,
+                "compatibility": "none",
+
+                "defaultversionid": "1",
+                "defaultversionurl": "#/mcpproviders/redis/servers/mcp-redis/versions/1",
+                "defaultversionsticky": false
+              }
+            },
+            "1": {
+              "serverid": "mcp-redis",
+              "versionid": "1",
+              "self": "#/mcpproviders/redis/servers/mcp-redis/versions/1",
+              "xid": "/mcpproviders/redis/servers/mcp-redis/versions/1",
+              "epoch": 1,
+              "name": "io.github.redis/mcp-redis",
+              "isdefault": true,
+              "description": "The Redis MCP Server is a natural language interface designed for agentic applications to efficiently manage and search data in Redis. It integrates seamlessly with MCP (Model Content Protocol) clients, enabling AI-driven workflows to interact with structured and unstructured data in Redis.",
+              "createdat": "2025-05-21T12:03:50.083046453Z",
+              "modifiedat": "2025-05-21T12:03:50.083046453Z",
+              "ancestor": "1",
+              "prompts": [],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [
+                      {
+                        "description": "Redis IP or hostname",
+                        "name": "REDIS_HOST",
+                        "required": false
+                      },
+                      {
+                        "description": "Redis port",
+                        "name": "REDIS_PORT",
+                        "required": false
+                      },
+                      {
+                        "description": "Default database username",
+                        "name": "REDIS_USERNAME",
+                        "required": false
+                      },
+                      {
+                        "description": "Default database password",
+                        "name": "REDIS_PWD",
+                        "required": false
+                      },
+                      {
+                        "description": "Enables or disables SSL/TLS",
+                        "name": "REDIS_SSL",
+                        "required": false
+                      }
+                    ],
+                    "positional_arguments": [],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "python",
+                  "package_name": "mcp-redis"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "redis/mcp-redis",
+              "resources": [],
+              "tools": [
+                {
+                  "description": "Tools to set, get strings with expiration. Useful for storing simple configuration values, session data, or caching responses.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "string"
+                },
+                {
+                  "description": "Tools to store field-value pairs within a single key. The hash can store vector embeddings. Useful for representing objects with multiple attributes, user profiles, or product information where fields can be accessed individually.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "hash"
+                },
+                {
+                  "description": "Tools with common operations to append and pop items. Useful for queues, message brokers, or maintaining a list of most recent actions.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "list"
+                },
+                {
+                  "description": "Tools to add, remove and list set members. Useful for tracking unique values like user IDs or tags, and for performing set operations like intersection.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "set"
+                },
+                {
+                  "description": "Tools to manage data for e.g. leaderboards, priority queues, or time-based analytics with score-based ordering.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "sorted set"
+                },
+                {
+                  "description": "Functionality to publish messages to channels and subscribe to receive them. Useful for real-time notifications, chat applications, or distributing updates to multiple clients.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "pub/sub"
+                },
+                {
+                  "description": "Tools to add, read, and delete from data streams. Useful for event sourcing, activity feeds, or sensor data logging with consumer groups support.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "streams"
+                },
+                {
+                  "description": "Tools to store, retrieve, and manipulate JSON documents in Redis. Useful for complex nested data structures, document databases, or configuration management with path-based access.",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "JSON"
+                },
+                {
+                  "description": "Tools to manage vector indexes and perform vector search",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "query engine"
+                },
+                {
+                  "description": "Tool to retrieve information about the database",
+                  "inputschema": {
+                    "type": "object"
+                  },
+                  "name": "server management"
+                }
+              ],
+              "version_detail": {
+                "version": "0.0.0"
+              }
+            }
+          },
+          "versionscount": 2
+        }
+      },
+      "serverscount": 2
+    },
+    "rember": {
+      "mcpproviderid": "rember",
+      "self": "#/mcpproviders/rember",
+      "xid": "/mcpproviders/rember",
+      "epoch": 1,
+      "createdat": "2025-05-21T12:03:49.848060924Z",
+      "modifiedat": "2025-05-21T12:03:49.848060924Z",
+
+      "serversurl": "#/mcpproviders/rember/servers",
+      "servers": {
+        "rember-mcp": {
+          "serverid": "rember-mcp",
+          "self": "#/mcpproviders/rember/servers/rember-mcp",
+          "xid": "/mcpproviders/rember/servers/rember-mcp",
+
+          "metaurl": "#/mcpproviders/rember/servers/rember-mcp/meta",
+          "meta": {
+            "serverid": "rember-mcp",
+            "self": "#/mcpproviders/rember/servers/rember-mcp/meta",
+            "xid": "/mcpproviders/rember/servers/rember-mcp/meta",
+            "epoch": 1,
+            "createdat": "2025-05-21T12:03:49.848060924Z",
+            "modifiedat": "2025-05-21T12:03:49.848060924Z",
+            "readonly": false,
+            "compatibility": "none",
+
+            "defaultversionid": "1",
+            "defaultversionurl": "#/mcpproviders/rember/servers/rember-mcp/versions/1",
+            "defaultversionsticky": false
+          },
+          "versionsurl": "#/mcpproviders/rember/servers/rember-mcp/versions",
+          "versions": {
+            "1": {
+              "serverid": "rember-mcp",
+              "versionid": "1",
+              "self": "#/mcpproviders/rember/servers/rember-mcp/versions/1",
+              "xid": "/mcpproviders/rember/servers/rember-mcp/versions/1",
+              "epoch": 1,
+              "name": "io.github.rember/rember-mcp",
+              "isdefault": true,
+              "description": "Allow Claude to create flashcards for you with the official Model Context Protocol (MCP) for Rember. Rember helps you study and remember anything you care about by scheduling spaced repetition reviews.",
+              "createdat": "2025-05-21T12:03:49.848060924Z",
+              "modifiedat": "2025-05-21T12:03:49.848060924Z",
+              "ancestor": "1",
+              "prompts": [],
+              "registries": [
+                {
+                  "command_arguments": {
+                    "environment_variables": [
+                      {
+                        "description": "API key for Rember MCP server",
+                        "name": "REMBER_API_KEY",
+                        "required": true
+                      }
+                    ],
+                    "positional_arguments": [
+                      "-y",
+                      "@getrember/mcp",
+                      "--api-key=YOUR_REMBER_API_KEY"
+                    ],
+                    "sub_commands": []
+                  },
+                  "license": "",
+                  "name": "npm",
+                  "package_name": "@getrember/mcp"
+                }
+              ],
+              "remotes": [],
+              "repo_ref": "rember/rember-mcp",
+              "resources": [],
+              "tools": [
+                {
+                  "description": "Create flashcards with AI. This tool takes a list of notes from Claude, it calls the Rember API to generate a few flashcards for each note. After learning something new in your chat with Claude, you can ask \"help me remember this\" or \"create a few flashcards\" or \"add to Rember\".",
+                  "inputschema": {
+                    "properties": {
+                      "notes": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "notes"
+                    ],
+                    "type": "object"
+                  },
+                  "name": "create_flashcards"
+                }
+              ],
+              "version_detail": {
+                "version": "1.1.3"
+              }
+            }
+          },
+          "versionscount": 1
+        }
+      },
+      "serverscount": 1
+    }
+  },
+  "mcpproviderscount": 7,
+  "schemagroupsurl": "#/schemagroups",
+  "schemagroups": {},
+  "schemagroupscount": 0
+}

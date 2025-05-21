@@ -1,0 +1,44 @@
+{
+    "agentcardid": "reimbursement",
+    "description": "Reimbursement Agent. Handles employee expense reimbursement processing.",
+    "name": "Reimbursement Agent",
+    "agentcard": {
+        "name": "Reimbursement Agent",
+        "description": "Handles employee expense reimbursement processing.",
+        "url": "https://reimbursement.example.com/a2a",
+        "version": "1.0.0",
+        "capabilities": {
+            "streaming": true,
+            "pushNotifications": false,
+            "stateTransitionHistory": true
+        },
+        "authentication": {
+            "schemes": [
+                "apiKey"
+            ]
+        },
+        "defaultInputModes": [
+            "text"
+        ],
+        "defaultOutputModes": [
+            "text"
+        ],
+        "skills": [
+            {
+                "id": "process_reimbursement",
+                "name": "Process Reimbursement",
+                "description": "Processes expense reimbursement requests based on provided details.",
+                "inputModes": [
+                    "text"
+                ],
+                "outputModes": [
+                    "text"
+                ],
+                "examples": [
+                    "Reimburse €20 for client lunch on 2025-05-10.",
+                    "Submit expense for €50 taxi fare from 2025-05-12."
+                ]
+            }
+        ]
+    }
+}
