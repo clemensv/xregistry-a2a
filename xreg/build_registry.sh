@@ -61,6 +61,14 @@ if [ -f "$INDEX_FILE" ]; then
   echo "Updated base URL in $INDEX_FILE to $GITHUB_PAGES_URL"
 else
   echo "Index file not found: $INDEX_FILE"
+fi    
+
+# copy the index.html file to 404.html
+if [ -f "$INDEX_FILE" ]; then
+  cp "$INDEX_FILE" "$SITE_DIR/src/404.html"
+  echo "Copied $INDEX_FILE to $SITE_DIR/src/404.html"
+else
+  echo "Index file not found: $INDEX_FILE"
 fi
 
 # Replace the URL in environment.prod.ts
