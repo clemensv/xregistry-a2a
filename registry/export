@@ -1,0 +1,113 @@
+{
+  "specversion": "1.0-rc2",
+  "registryid": "xRegistry",
+  "self": "#/",
+  "xid": "/",
+  "epoch": 1,
+  "createdat": "2026-06-10T07:38:47.005906052Z",
+  "modifiedat": "2026-06-10T07:38:47.005906052Z",
+
+  "capabilities": {
+    "available": {
+      "capabilities": {
+        "mutable": true
+      },
+      "capabilitiesoffered": {
+        "mutable": false
+      },
+      "entities": {
+        "mutable": true
+      },
+      "export": {
+        "mutable": false
+      },
+      "model": {
+        "mutable": false
+      },
+      "modelsource": {
+        "mutable": true
+      }
+    },
+    "compatibilities": {
+      "avro*": [
+        "backward",
+        "backward_transitive",
+        "forward",
+        "forward_transitive",
+        "full",
+        "full_transitive"
+      ],
+      "jsonschema*": [
+        "backward",
+        "backward_transitive",
+        "forward",
+        "forward_transitive",
+        "full",
+        "full_transitive"
+      ],
+      "numbers": [
+        "backward",
+        "backward_transitive",
+        "forward",
+        "forward_transitive",
+        "full",
+        "full_transitive"
+      ],
+      "protobuf*": [
+        "backward",
+        "backward_transitive",
+        "forward",
+        "forward_transitive",
+        "full",
+        "full_transitive"
+      ],
+      "xmlschema*": [
+        "backward",
+        "backward_transitive",
+        "forward",
+        "forward_transitive",
+        "full",
+        "full_transitive"
+      ]
+    },
+    "flags": [
+      "binary",
+      "collections",
+      "doc",
+      "epoch",
+      "filter",
+      "ignore",
+      "inline",
+      "setdefaultversionid",
+      "sort",
+      "specversion"
+    ],
+    "formats": [
+      "avro*",
+      "jsonschema*",
+      "numbers",
+      "protobuf*",
+      "xmlschema*"
+    ],
+    "ignores": [
+      "capabilities",
+      "defaultversionid",
+      "defaultversionsticky",
+      "epoch",
+      "id",
+      "modelsource",
+      "readonly"
+    ],
+    "pagination": false,
+    "shortself": false,
+    "specversions": [
+      "1.0-rc2"
+    ],
+    "stickyversions": true,
+    "versionmodes": [
+      "createdat",
+      "manual"
+    ]
+  },
+  "modelsource": {}
+}

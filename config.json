@@ -1,0 +1,16 @@
+{
+  "apiEndpoints": [
+    "https://xregistry.soaphub.org",
+    "https://xregistry.soaphub.org/reg-APIs-Guru",
+    "https://xregistry.soaphub.org/reg-DocStore",
+    "https://xregistry.io/xreg/"
+  ],
+  "modelUris": [],
+  "baseUrl": "https://clemensv.github.io/xregistry-a2a/",
+  "defaultDocumentView": true,
+  "features": {
+    "enableFilters": true,
+    "enableSearch": true,
+    "enableDocDownload": true
+  }
+}
